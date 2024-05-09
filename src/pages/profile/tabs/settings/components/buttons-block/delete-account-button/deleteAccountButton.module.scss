@@ -1,0 +1,49 @@
+
+.block {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px 0px 0px 0px;
+
+   P {
+      color: var(--color-text);
+      text-align: center;
+   }
+
+   .title {
+      font-size: 20px;
+      line-height: 30px;
+
+      @media (max-width: 1000px) {
+         font-size: 18px;  
+      }
+   }
+
+   .button_wrapper {
+      position: relative;
+      height: 100%;
+      display: grid;
+      align-items: center;
+
+      button {
+         grid-area: 1/2;
+      }
+   }
+
+   .hint {
+      grid-area: 1/2;
+
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transform: translate(80%, 150%);
+
+      color: var(--color-main);
+      font-size: 12px;
+
+      @media (max-width: 1000px) {
+         transform: translate(50%, 150%);
+      }
+   }
+
+}

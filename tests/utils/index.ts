@@ -1,0 +1,1 @@
+export { expectToBeInTheDocument } from "./expectToBeInTheDocument"

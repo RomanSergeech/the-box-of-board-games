@@ -1,0 +1,31 @@
+
+.logo {
+   position: relative;
+   user-select: none;
+   
+   svg {
+      width: 170px;
+
+      @media (max-width: 1000px) {
+         width: 140px;
+      }
+   }
+
+   span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate(0, 50%);
+
+      color: var(--color-main);
+      font-size: 14px;
+      pointer-events: none;
+
+      @media (max-width: 1000px) {
+         right: 50%;
+         font-size: 10px;
+         transform: translate(50%, 0%);
+      }
+   }
+
+}

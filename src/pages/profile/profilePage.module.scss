@@ -1,0 +1,15 @@
+
+.page_body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--layout-gap);
+
+	.tab_btns {
+      height: var(--top-btn-height);
+		display: grid;
+      grid-template-columns: repeat(3, 1fr);
+		gap: var(--layout-gap);
+	}
+
+}
+

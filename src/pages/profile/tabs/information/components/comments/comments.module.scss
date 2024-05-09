@@ -1,0 +1,129 @@
+@import '@/shared/assets/styles/variables.scss';
+
+.comments {
+   grid-column: 1/4;
+
+   display: grid;
+   gap: 20px;
+}
+
+.comments_wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 40px;
+
+   &>span {
+      color: var(--color-text);
+   }
+}
+
+.comment {
+   min-width: 250px;
+   max-width: 30%;
+   display: grid;
+   grid-template-columns: auto 1fr;
+   grid-template-rows: repeat(3, auto);
+   align-content: start;
+   column-gap: 20px;
+   position: relative;
+   // padding-right: 40px;
+
+   @media (any-hover: hover) {
+      &:hover {
+         .options {
+            opacity: 1;
+         }
+      }
+   }
+
+   @media (max-width: 1200px) {
+      column-gap: 10px;
+   }
+   @media (max-width: 600px) {
+      min-width: 100%;  
+   }
+
+   img {
+      grid-column: 1/2;
+      grid-row: 1/3;
+
+      @media (max-width: 1200px) {
+         width: 30px;
+         height: 30px;
+      }
+   }
+
+   p {
+      grid-column: 2/3;
+
+      padding-right: 20px;
+
+      overflow-wrap: anywhere;
+      color: var(--color-text);
+      font-family: 'ExtraLight';
+   }
+
+   .tooltip_wrapper_nickname {
+      width: max-content;
+   }
+   .nickname {
+      cursor: pointer;
+      text-align: start;
+
+      transition: all .4s ease 0s;
+
+      font-family: 'Light';
+
+      @media (any-hover: hover) {
+         &:hover {
+            color: var(--color-main);
+         }
+      }
+   }
+
+   .date {
+      color: var(--color-border);
+      font-size: 13px;
+      font-family: 'Medium';
+   }
+
+   .options {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      opacity: 0;
+
+      transition: all .3s ease 0s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            svg {
+               path {
+                  fill: var(--color-text)
+               }
+            }
+         }
+      }
+
+      @media (max-width: 1200px) {
+         opacity: 1;
+      }
+   }
+
+   .delete_comment_btn {
+      color: var(--color-red_light);
+      cursor: pointer;
+   }
+
+   .tooltip_wrapper_options {
+      position: absolute;
+      top: 0;
+      right: 0px;
+   }
+
+}
+

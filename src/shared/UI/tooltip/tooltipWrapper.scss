@@ -1,0 +1,219 @@
+
+.tooltip_wrapper {
+	position: relative;
+	width: inherit;
+	height: inherit;
+
+	&._hover {
+		@media (any-hover: hover) {
+			&:hover .tooltip_body {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	p {
+		color: var(--color-text);
+		font-family: 'Light';
+		text-align: center;
+	}
+
+	.tooltip_link {
+		display: block;
+		color: var(--color-main);
+      font-family: 'Light';
+		white-space: nowrap;
+		padding: 0 10px;
+		border-left: 2px solid transparent;
+		border-right: 2px solid transparent;
+		transition: all .4s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				border-left: 2px solid var(--color-main);
+				border-right: 2px solid var(--color-main);
+			}
+		}
+	}
+
+	.triangle {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background-color: var(--color-border);
+			border-radius: 3px;
+			clip-path: polygon(0 0, 0% 100%, 100% 100%);
+		}
+	}
+
+	.tooltip_body {
+		max-width: 300px;
+		width: max-content;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 5px;
+		padding: 10px;
+		background: var(--color-block);
+		border: var(--border-width) solid var(--color-border);
+		filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.7));
+		border-radius: 5px;
+		user-select: none;
+
+		transition: all .3s ease 0s;
+
+		z-index: 51;
+
+		&._hover {
+			opacity: 0;
+			visibility: hidden;
+		}
+		&._active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&._errorTooltip {
+			opacity: 0;
+			visibility: hidden;
+			border: 2px solid var(--color-red);
+
+			&._active {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.triangle {
+				&::before {
+					background-color: var(--color-red);
+				}
+			}
+		}
+
+      animation: scale .15s ease forwards;
+
+      @keyframes scale {
+         0% { transform: var(--tooltip-translate) scale(0); }
+         100% { transform: var(--tooltip-translate) scale(1); }
+      }
+
+		&._top {
+         --tooltip-translate: translate( -50%, calc(-100% - 15px) );
+
+			top: 0;
+			left: 50%;
+
+			.triangle {
+				width: 100%;
+				left: 50%;
+				bottom: 0;
+				transform: translate( -50%, 100% );
+				&::before {
+					transform: rotate(-45deg) translate(50%, -50%);
+				}
+			}
+
+         &._tooltip_hides {
+            left: 0;
+            transform: translate( 0%, calc(-100% - 15px) );
+
+            .triangle {
+               transform: translate( -90%, 100% );
+            }
+         }
+		}
+
+		&._right {
+         --tooltip-translate: translate( calc(100% + 15px), -50% );
+
+			top: calc( 50% - 3px );
+			right: 0;
+
+			.triangle {
+				height: 100%;
+				left: 0;
+				top: 0;
+				transform: translate( -100%, 0 );
+				&::before {
+					transform: rotate(45deg) translate(50%, -50%);
+				}
+			}
+		}
+      &._top_right {
+			--tooltip-translate: translate( -30%, calc(-100% - 15px) );
+
+			top: 0;
+			left: 100%;
+
+			.triangle {
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				transform: translate( 0, 100% );
+				&::before {
+					left: 15%;
+					transform: rotate(-45deg) translate(50%, -50%);
+				}
+			}
+		}
+
+		&._bottom {
+         --tooltip-translate: translate( 0, calc(100% + 15px) );
+
+			bottom: 0;
+			left: 0;
+
+         // @media (max-width: 480px) {
+         //    transform: translate( -43%, calc(100% + 15px) );
+         // }
+
+			.triangle {
+				width: 100%;
+				left: 0%;
+				top: 0;
+				transform: translate( -25%, -100% );
+				&::before {
+					transform: rotate(135deg) translate(50%, -50%);
+				}
+			}
+
+         &._tooltip_hides {
+            transform: translate( -50%, calc(100% + 15px) );
+
+            // .triangle {
+               // transform: translate( -31%, -100% );
+            // }
+         }
+		}
+
+		&._left {
+         --tooltip-translate: translate( calc(-100% - 15px), -50% );
+
+			top: calc( 50% - 3px );
+			left: 0;
+
+			.triangle {
+				height: 100%;
+				top: 0;
+				right: 0;
+				transform: translate( 100%, 0 );
+				&::before {
+					transform: rotate(225deg) translate(50%, -50%);
+				}
+			}
+		}
+
+	}
+
+}

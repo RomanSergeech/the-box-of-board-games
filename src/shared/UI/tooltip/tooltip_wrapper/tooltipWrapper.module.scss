@@ -1,0 +1,125 @@
+
+.tooltip_wrapper {
+   position: relative;
+
+   &[open] summary:after {
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: fixed;
+      z-index: 50;
+   }
+
+   &[open] .tooltip {
+      animation: scale .2s ease;
+   }
+
+   &._top_right {
+      --tooltip-translate: translate( -30%, calc(-100% - 15px) );
+   }
+
+   @keyframes scale {
+      0% {
+         transform: var(--tooltip-translate) scale(0);
+      }
+      100% {
+         transform: var(--tooltip-translate) scale(1);
+      }
+   }
+
+   summary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      list-style: none;
+
+      &::marker {
+			display: none;
+		}
+   }
+
+   .tooltip {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translatey(-100%) translatex(-50%);
+      transform-origin: bottom center;
+
+      z-index: 51;
+      
+      max-width: 300px;
+      width: max-content;
+      display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 5px;
+		padding: 10px;
+		background: var(--color-block);
+		border: var(--border-width) solid var(--color-border);
+		filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.7));
+		border-radius: 5px;
+		user-select: none;
+      
+      color: var(--color-text);
+      font-size: 16px;
+
+      :global(.tooltip_link) {
+         display: block;
+         color: var(--color-main);
+         font-family: 'Light';
+         white-space: nowrap;
+         padding: 0 10px;
+         border-left: 2px solid transparent;
+         border-right: 2px solid transparent;
+         transition: all .4s ease 0s;
+
+         @media (any-hover: hover) {
+            &:hover {
+               border-left: 2px solid var(--color-main);
+               border-right: 2px solid var(--color-main);
+            }
+         }
+      }
+
+      .triangle {
+         width: 20px;
+         height: 20px;
+         position: absolute;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+   
+         &::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: var(--color-border);
+            border-radius: 3px;
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+         }
+      }
+
+      &._top_right {
+			top: 0;
+			left: 100%;
+			transform: var(--tooltip-translate);
+
+			.triangle {
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				transform: translate( 0, 100% );
+
+				&::before {
+					left: 15%;
+					transform: rotate(-45deg) translate(50%, -50%);
+				}
+			}
+		}
+   }
+}

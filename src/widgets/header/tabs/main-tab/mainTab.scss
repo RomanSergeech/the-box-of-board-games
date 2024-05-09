@@ -1,0 +1,46 @@
+
+.main_tab {
+
+	@media (max-width: 1000px) {
+		position: absolute;
+		z-index: 3;
+	}
+
+	.bg {
+		transition: transform .2s cubic-bezier(.58,0,.42,1.01) 0.3s;
+		transform: translate3d(-30px, -115px, 0px);
+
+      @media (max-width: 1600px) {
+         transform: translate3d(-30px, -125px, 0px);
+      }
+		@media (max-width: 1000px) {
+			transform: translate3d(40px, -560px, 0px);
+
+			&._active_menu {
+				transform: translate3d(40px, -80px, 0px);
+
+            .text {
+               left: 10px;
+               bottom: -170px;
+            }
+			}
+		}
+
+		&::after {
+			width: 300px;
+			height: 300px;
+			box-shadow: 0px -2px var(--shadow-part-header-tabs), var(--shadow-inner);
+			transform: rotate(-150deg);
+		}
+
+		.text {
+			bottom: -165px;
+			left: 5px;
+
+         @media (max-width: 1600px) {
+            left: 7px;
+         }
+		}
+
+	}
+}

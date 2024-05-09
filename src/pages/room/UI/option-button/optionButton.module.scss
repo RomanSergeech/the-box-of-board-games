@@ -1,0 +1,58 @@
+
+$shadowDrop: 0px 3px 6px 4px rgba(0, 0, 0, .2);
+
+.button {
+   --button-width: 70px;
+
+   display: block;
+   
+   width: var(--button-width);
+   height: max-content;
+
+   @media (max-width: 1200px) {
+      --button-width: 45px;
+      padding: 10px 2px;
+   }
+
+   // border-radius: var(--border-radius);
+   // box-shadow: $shadowDrop, inset 0px 0px 10px 0px rgba(234, 234, 234, .5);
+   // padding: 12px 4px;
+
+   // color: var(--color-text);
+   // font-size: 16px;
+   // font-family: 'Regular';
+   // text-align: center;
+
+   // transition: box-shadow .4s ease 0s, transform .1s ease 0s;
+
+   // @media (any-hover: hover) {
+   //    &:hover {
+   //       box-shadow: $shadowDrop, inset 0px 0px 10px 0px rgba(222, 213, 0, 0.5);
+   //    }
+   // }
+
+   // &:active {
+   //    transform: scale(0.92);
+   // }
+
+   // &:disabled {
+   //    pointer-events: none;
+   //    user-select: none;
+   //    border-color: var(--color-border);
+   //    color: var(--color-border);
+   //    box-shadow: $shadowDrop, inset 0px 0px 10px 0px rgba(92, 92, 92, 0.5);
+   // }
+
+   &._size_2 {
+      width: calc(var(--button-width) * 2 + var(--_settings-gap));
+   }
+   &._size_3 {
+      width: calc(var(--button-width) * 3 + var(--_settings-gap) * 2);
+   }
+
+   &._active {
+      color: var(--color-main);
+      border: 1px solid var(--color-main);
+      box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, .2), inset 0px 0px 10px 0px rgba(222, 213, 0, 0.50);
+   }
+}

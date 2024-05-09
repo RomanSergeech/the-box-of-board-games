@@ -1,0 +1,20 @@
+
+.img {
+   width: 80px;
+   height: 80px;
+   border-radius: var(--border-radius);
+ 
+   &._error {
+      box-shadow: inset 0px 0px 10px 3px rgba(255, 255, 255, 0.50), inset 0px 0px 4px 0px rgba(0, 0, 0, 1);
+   }
+
+   &.border-color-text {
+      border: 1px solid var(--color-text);
+   }
+   &.border-color-main {
+      border: 1px solid var(--color-main);
+   }
+   &.border-color-border {
+      border: 1px solid var(--color-border);
+   }
+}

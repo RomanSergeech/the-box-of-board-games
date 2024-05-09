@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"composite": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"allowSyntheticDefaultImports": true,
+		
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		// "noUnusedLocals": true, // Код проверяется на наличие неиспользуемых переменных
+		// "noUnusedParameters": true, // Код проверяется на наличие неиспользуемых аргументов функций и методов
+	
+	},
+	"include": ["vite.config.ts"]
+}

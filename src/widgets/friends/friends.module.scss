@@ -1,0 +1,47 @@
+
+.friends {
+	width: 100%;
+	margin: 0 auto;
+	
+	@media (max-width: 480px) {
+		max-width: 100%;
+	}
+
+	.friends_body {
+		padding: 25px 10px 10px 10px;
+		display: flex;
+		flex-direction: column;
+
+		& > button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--color-text);
+			font-size: 16px;
+			font-family: 'Regular';
+			background-color: transparent;
+			position: relative;
+			margin-top: 25px;
+
+         @media (max-width: 1600px) {
+            font-size: 14px;
+         }
+
+			&::before, &::after {
+				content: '';
+				position: absolute;
+				width: 40px;
+				height: 2px;
+				background-color: var(--color-text);
+			}
+			&::before {
+				transform: translate(200%, 0);
+			}
+			&::after {
+				transform: translate(-200%, 0);
+			}
+
+		}
+	}
+
+}

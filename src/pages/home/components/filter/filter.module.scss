@@ -1,0 +1,128 @@
+
+.roomsFilter {
+	position: relative;
+	z-index: 20;
+	user-select: none;
+
+	.sub_title {
+		color: var(--color-text);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					animation: filterAnim 0.5s;
+				}
+			}
+		}
+
+		@media (max-width: 1600px) {
+			font-size: 14px;
+			gap: 5px;
+
+			svg {
+				width: 20px;
+			}
+		}
+
+		svg {
+			transition: all .3s ease 0s;
+		}
+	}
+	@keyframes filterAnim {
+		0% {
+			transform: rotate(0);
+		}
+		33% {
+			transform: rotate(-15deg);
+		}
+		66% {
+			transform: rotate(15deg);
+		}
+		100% {
+			transform: rotate(0);
+		}
+	}
+
+	.popup {
+		min-width: 320px;
+		position: absolute;
+		top: 40px;
+		right: -20px;
+		background: var(--color-bg);
+		border: var(--border-width) solid var(--color-main);
+		border-radius: var(--border-radius) 0 0 var(--border-radius);
+		box-shadow: var(--shadow-drop), var(--shadow-inner);
+		padding: 30px;
+		opacity: 0;
+		visibility: hidden;
+		transform: translate(0, 50px);
+
+		color: var(--color-text);
+      font-size: 16px;
+      
+		transition: all .4s ease 0s;
+
+      @media (max-width: 1600px) {
+         font-size: 14px;
+      }
+
+		&._active {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0);
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			li:nth-child(2) {
+				margin-top: 5px;
+			}
+		}
+
+		ul:not(:first-child) {
+			margin-top: 30px;
+		}
+
+		li {
+			display: flex;
+			gap: 10px;
+			user-select: none;
+		}
+
+		label {
+			border: 1px solid var(--color-main);
+		}
+	}
+
+	.count_players {
+
+		.num {
+			width: 50px;
+			background-color: transparent;
+			border: 1px solid var(--color-text);
+			border-radius: 2px;
+			color: var(--color-text);
+			font-size: 1em;
+			user-select: none;
+			padding: 5px 0 5px 5px;
+			caret-color: transparent;
+		}
+
+		li:nth-child(3) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+   button {
+      margin: 20px auto auto auto;
+   }
+
+}

@@ -1,0 +1,23 @@
+
+.online_status {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: var(--color-text);
+   font-size: 16px;
+
+   svg {
+      margin-top: 2px;
+   }
+
+   .online {
+      rect {
+         fill: var(--color-green)
+      }
+   }
+   .offline {
+      rect {
+         fill: var(--color-red)
+      }
+   }
+}

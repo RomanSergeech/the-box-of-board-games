@@ -1,0 +1,21 @@
+
+.description_block {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   column-gap: 40px;
+   
+   min-height: var(--top-btn-height);
+
+   color: var(--color-text);
+   font-size: 16px;
+   font-family: 'ExtraLight';
+
+   @media (max-width: 1600px) {
+      font-size: 14px;
+   }
+
+   &:global(.block) {
+      padding: 10px 40px;
+   }
+}

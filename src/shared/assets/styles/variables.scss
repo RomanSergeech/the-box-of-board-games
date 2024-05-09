@@ -1,0 +1,23 @@
+@use 'sass:math';
+
+$titleHeight: 75px;
+
+@function proc($pxOne, $pxTwo) {
+	$result: math.div($pxOne, $pxTwo) * 100%;
+	@return $result;
+}
+
+@function ch($pxOne, $pxTwo) {
+	$result: math.div($pxOne, $pxTwo);
+	@return $result;
+}
+
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+
+@function em($pxOne) {
+	$result: math.div($pxOne, 16) + em;
+	@return $result;
+}

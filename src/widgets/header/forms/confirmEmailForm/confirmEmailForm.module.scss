@@ -1,0 +1,58 @@
+
+.confirm_email_form {
+   position: absolute;
+	right: 35px;
+	bottom: -350px;
+	display: grid;
+   justify-items: center;
+   grid-template-columns: 1fr;
+   gap: 10px;
+   
+   button {
+      grid-column: auto;
+   }
+
+   @media (max-width: 1000px) {
+		right: 220px;
+	}
+   @media (max-width: 768px) {
+      right: 320px;
+   }
+   @media (max-width: 600px) {
+      right: 425px;
+   }
+}
+
+.text {
+   display: flex;
+   flex-direction: column;
+
+   color: var(--color-text);
+   font-size: 18px;
+   white-space: nowrap;
+   text-align: center;
+
+   @media (max-width: 1000px) {
+      font-size: 16px;
+      white-space: wrap;
+   }
+
+   .email {
+      color: var(--color-main);
+   }
+
+   span {
+      font-size: 14px;
+      margin-top: 10px;
+   }
+
+   button {
+      width: max-content;
+      color: var(--color-text);
+      font-family: 'Light';
+      border: .5px solid var(--color-text);
+      border-radius: 5px;
+      padding: 3px 10px;
+      margin: 20px auto;
+   }
+}

@@ -1,0 +1,77 @@
+
+.information {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: var(--layout-gap);
+
+   font-size: 16px;
+
+   @media (max-width: 1600px) {
+      font-size: 14px;
+   }
+
+   :global(.block) {
+      padding: 40px;
+
+      @media (max-width: 1600px) {
+         padding: var(--_block-padding);
+      }
+   }
+
+   :global(.block_title) {
+      @media (min-width: 1600px) {
+         transform: translate(-20px, -20px);  
+      }
+   }
+}
+
+.buttons_block {
+   grid-column: 1/4;
+
+   display: grid;
+   grid-template-columns: 1fr auto;
+   gap: var(--layout-gap);
+
+   @media (max-width: 1600px) {
+      button {
+         font-size: 12px;
+      }  
+   }
+   @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      justify-items: end;
+   }
+
+   // button:not(:nth-child(1)) {
+   //    padding: 12px;
+   // }
+
+   .add_delete_friend_button {
+      justify-self: start;
+      width: 260px;
+
+      @media (max-width: 1200px) {
+         width: 180px;
+      }
+   }
+   .block_user_button {
+      width: 200px;
+      grid-column: 3/4;
+      grid-row: 1/2;
+
+      &._blocked {
+         grid-column: 1/2;
+         grid-row: 1/2;
+      }
+
+      @media (max-width: 768px) {
+         grid-column: auto;
+         grid-row: auto;
+
+         &._blocked {
+            grid-column: auto;
+            grid-row: auto;
+         }
+      }
+   }
+}

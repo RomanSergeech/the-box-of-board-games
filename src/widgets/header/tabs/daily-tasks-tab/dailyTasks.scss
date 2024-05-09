@@ -1,0 +1,42 @@
+
+.some_tab {
+	z-index: 9;
+
+	.bg {
+		transition: transform .5s cubic-bezier(.58,0,.42,1.01) 0.15s;
+		transform: translate3d(0px, -110px, 0px);
+
+      @media (max-width: 1600px) {
+         transform: translate3d(0px, -120px, 0px);
+      }
+		@media (max-width: 1000px) {
+			transform: translate3d(20px, -510px, 0px);
+
+			&._active_menu {
+				transform: translate3d(20px, -120px, 0px);
+
+            .text {
+               bottom: -170px;
+            }
+			}
+		}
+
+		&::after {
+			width: 300px;
+			height: 300px;
+			transform: rotate(-128deg);
+			box-shadow: -2px 0px var(--shadow-part-header-tabs), var(--shadow-inner);
+		}
+
+		.text {
+			text-align: center;
+			bottom: -160px;
+			right: -15px;
+
+         @media (max-width: 1600px) {
+            bottom: -165px;
+            right: -10px;
+         }
+		}
+	}
+}

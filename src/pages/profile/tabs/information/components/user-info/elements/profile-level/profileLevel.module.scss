@@ -1,0 +1,41 @@
+@import '@/shared/assets/styles/variables.scss';
+
+.profile_level {
+   display: flex;
+   align-items: center;
+	gap: 7px;
+
+	color: var(--color-text);
+	user-select: none;
+
+   font-size: 16px;
+
+   @media (max-width: 768px) {
+      font-size: 12px;  
+   }
+
+   span {
+      font-size: em(14);
+      font-family: 'ExtraLight';
+      white-space: nowrap;
+   }
+
+	.status_name {
+		width: max-content;
+		border-bottom: 1px solid transparent;
+		cursor: pointer;
+      
+		color: var(--color-main);
+		font-size: em(18);
+      font-family: 'Light';
+      
+		transition: all .4s ease 0s;
+
+      @media (any-hover: hover) {
+			&:hover {
+				border-bottom: 1px solid var(--color-main);
+			}
+		}
+	}
+
+}

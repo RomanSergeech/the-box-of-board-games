@@ -1,0 +1,42 @@
+
+.socials {
+   position: absolute;
+   bottom: -120px;
+
+   z-index: 1;
+
+   display: grid;
+   gap: 20px;
+
+   @media (max-width: 1600px) {
+      bottom: -160px;
+   }
+   @media (max-width: 1000px) {
+      bottom: -240px;
+   }
+
+   p {
+      width: 400px;
+
+      color: var(--color-main);
+      font-size: 14px;
+      font-family: 'Light';
+      text-align: center;
+
+      a {
+			color: inherit;
+			font-size: inherit;
+			font-family: 'Light';
+			position: relative;
+         text-decoration: underline;
+      }
+   }
+}
+
+.buttons {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}

@@ -1,0 +1,62 @@
+
+name: CI/CD
+
+on:
+   push:
+      branches:
+        - main
+
+env:
+   USERNAME: "username"
+   PORT: "3000"
+   IMAGE_NAME: "image"
+   CONTAINER_NAME: "container_name"
+
+jobs:
+
+   tests:
+      runs-on: ubuntu-latest
+      steps:
+         -  uses: actions/checkout@v4
+
+         -  name: Install deps
+            run: npm ci
+
+         -  name: Test
+            run: npm run test
+
+   build_image:
+      needs: [tests]
+      runs-on: ubuntu-latest
+      steps:
+         -  uses: actions/checkout@v4
+
+         -  name: Login to GitHub Container Registry
+            uses: docker/login-action@v3
+            with:
+               registry: ghcr.io
+               username: ${{ github.actor }}
+               password: ${{ secrets.SECRET }}
+
+         -  name: Build and push Docker image
+            run: |
+               docker build . --tag $IMAGE_NAME
+               docker push $IMAGE_NAME
+
+   deploy:
+      needs: [build_image]
+      runs-on: ubuntu-latest
+      steps:
+         -  name: Deploy via SSH
+            uses: appleboy/ssh-action@v1.0.3
+            with:
+               host: ${{ secrets.HOST }}
+               username: ${{ secrets.USERNAME }}
+               key: ${{ secrets.KEY }}
+               port: 22
+               envs: IMAGE_NAME,PORT,CONTAINER_NAME
+               script: |
+                  docker stop $CONTAINER_NAME
+                  docker rm $CONTAINER_NAME
+                  docker pull $IMAGE_NAME
+                  docker run -d -p $PORT:$PORT --restart=always --name $CONTAINER_NAME $IMAGE_NAME

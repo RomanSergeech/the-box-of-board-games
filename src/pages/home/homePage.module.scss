@@ -1,0 +1,41 @@
+@import '@/shared/assets/styles/variables.scss';
+
+.page_body {
+   display: flex;
+   flex-direction: column;
+   gap: var(--layout-gap);
+
+   .btns {
+      height: var(--top-btn-height);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: inherit;
+   }
+}
+
+.body {
+   position: relative;
+
+   &:global(.block) {
+      --_block-padding: 10px;
+
+      @media (max-width: 1000px) {
+         --_block-padding: 0px;
+      }
+   }
+   
+	.top {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 10px 0 10px;
+	}
+
+   .back_to_game_btn {
+      justify-self: end;
+      align-self: end;
+
+      a {
+         color: var(--color-text);
+      }
+   }
+}

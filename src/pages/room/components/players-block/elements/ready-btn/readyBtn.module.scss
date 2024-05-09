@@ -1,0 +1,22 @@
+
+.wrapper {
+   position: absolute;
+   left: 50%;
+   bottom: 40px;
+   transform: translate(-50%, 0);
+
+   @media (max-width: 1440px) {
+      bottom: 20px;
+   }
+}
+
+.button {
+   min-width: auto;
+   padding: 12px 20px;
+
+	&._ready {
+      opacity: 0.3;
+      color: var(--color-text);
+      background-color: transparent;
+   }
+}

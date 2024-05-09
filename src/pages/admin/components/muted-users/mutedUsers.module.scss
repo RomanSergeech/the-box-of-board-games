@@ -1,0 +1,37 @@
+
+.muted_users {
+   width: max-content;
+   display: grid;
+   gap: 30px;
+   
+   & > div {
+      width: max-content;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+
+      color: var(--color-text);
+      font-size: 16px;
+      text-align: center;
+      
+      p:nth-of-type(1) {
+         grid-column: 1/2;
+      }
+      p:nth-of-type(2) {
+         grid-column: 2/3;
+      }
+      p:nth-of-type(3) {
+         grid-column: 1/3;
+      }
+      p:nth-of-type(4) {
+         grid-column: 1/3;
+      }
+
+      button {
+         min-width: auto;
+         width: max-content;
+         padding: 10px;
+         grid-column: 1/3;
+      }
+   }
+}

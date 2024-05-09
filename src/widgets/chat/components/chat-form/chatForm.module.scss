@@ -1,0 +1,111 @@
+
+.form {
+   --_padding: 20px;
+
+   @media (max-width: 1000px) {
+      --_padding: 10px;
+   }
+
+   width: calc(100% + var(--_padding) * 2);
+   transform: translate(calc(-1*var(--_padding)), 0);
+   margin-top: 6px;
+
+   position: relative;
+
+   textarea {
+      position: relative;
+      bottom: -6px;
+      width: 100%;
+      // background-color: transparent;
+      // border-top: var(--border-width) solid var(--color-border);
+      padding: 20px;
+      padding-right: 55px;
+
+      background: var(--color-block);
+      box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.20), inset 0px 3px 8px 0px rgba(17, 17, 17, 0.70), inset -2px -3px 6px 0px rgba(67, 67, 67, 0.70);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+
+      color: var(--color-text);
+      font-size: 16px;
+      font-family: 'ExtraLight';
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      resize: none;
+
+      @media (max-width: 1600px) {
+         font-size: 14px;
+      }
+      @media (max-width: 1000px) {
+         padding-right: 80px;
+      }
+      @media (max-width: 768px) {
+         padding-right: 60px;
+      }
+
+      &::placeholder {
+         width: 100%;
+         position: absolute;
+         left: 50%;
+         transform: translate(-50%, 0);
+         color: var(--color-text);
+         font-size: inherit;
+         font-family: inherit;
+         letter-spacing: inherit;
+         text-align: center;
+
+         @media (max-width: 1600px) {
+            font-size: 14px;
+         }
+      }
+
+      // &:focus {
+      //    border: 1px solid var(--color-text);
+      // }
+
+      &:focus + button {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+
+   button {
+      height: calc(100% - 5px);
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      background-color: var(--color-block);
+      border: var(--border-width) solid var(--color-main);
+      border-radius: 10px;
+      color: var(--color-text);
+      font-size: 14px;
+      font-family: 'Bold';
+      letter-spacing: 0.08em;
+      padding: 10px;
+      box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease 0s;
+
+      @media (max-width: 1000px) {
+         right: 0px;
+      }
+
+      &:focus-visible {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+
+   .mute_timer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      color: var(--color-text);
+      font-size: 18px;
+      white-space: nowrap;
+   }
+
+}

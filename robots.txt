@@ -1,0 +1,11 @@
+User-agent: *
+Sitemap: https://the-box-of-board-games.fun/sitemap.xml
+Allow: /home
+Disallow: /admin
+Disallow: /shop
+Disallow: /daily-tasks
+Disallow: /news
+Disallow: /profile
+Disallow: /profile/*
+Disallow: /report
+Disallow: /room/*

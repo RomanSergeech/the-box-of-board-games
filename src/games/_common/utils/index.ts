@@ -1,0 +1,2 @@
+
+export { getSortedPlayersArr } from "./getSortedPlayersArr"

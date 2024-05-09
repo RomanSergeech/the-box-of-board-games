@@ -1,0 +1,140 @@
+
+$boxShadow: 0px 3px 6px 2px rgba(0, 0, 0, .2);
+
+$colorOpacity: .4;
+
+$color-border: rgba(234, 234, 234, $colorOpacity - 0.1);
+$color-text: rgba(234, 234, 234, $colorOpacity - 0.1);
+$color-main: rgba(222, 213, 0, $colorOpacity);
+$color-green: rgba(25, 182, 0, $colorOpacity);
+$color-red: rgba(245, 94, 94, $colorOpacity);
+$color-red_light: rgba(245, 94, 94, $colorOpacity);
+
+$insetShadow: inset 0px 0px 15px 0px;
+
+.button {
+   display: block;
+   position: relative;
+   
+   height: max-content;
+   width: max-content;
+   min-width: 180px;
+   border-radius: var(--border-radius);
+   border-width: 1px;
+   border-style: solid;
+   box-shadow: $boxShadow;
+   padding: 12px 40px;
+
+   font-size: 16px;
+   font-family: 'Regular';
+   text-align: center;
+
+   user-select: none;
+
+   transition: box-shadow .4s ease 0s;
+
+   @media (max-width: 1600px) {
+      padding: 10px;
+      font-size: 14px;
+   }
+
+   &:active {
+      transform: scale(0.95);
+   }
+
+   &:focus-visible {
+      outline: none;
+      background-color: var(--color-border);
+   }
+
+   &:disabled,
+   &:global(._disabled) {
+      pointer-events: none!important;
+      user-select: none;
+      // border-color: var(--color-border)!important;
+      // color: var(--color-border)!important;
+      opacity: .3;
+   }
+
+   &.border_color-border {
+      border-color: var(--color-border);
+
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-border, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+   &.border_color-text {
+      border-color: var(--color-text);
+
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-text, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+   &.border_color-main {
+      border-color: var(--color-main);
+      // background-color: rgba(222, 215, 0, .2);
+
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-main, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+   &.border_color-green {
+      border-color: var(--color-green);
+
+      &:global(._hover) {
+         box-shadow: $boxShadow, $insetShadow $color-green, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-green, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+   &.border_color-red {
+      border-color: var(--color-red);
+
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-red, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+   &.border_color-red_light {
+      border-color: var(--color-red_light);
+
+      &:global(._hover) {
+         box-shadow: $boxShadow, $insetShadow $color-red_light, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            box-shadow: $boxShadow, $insetShadow $color-red_light, inset 0px 0px 4px 2px rgba(0, 0, 0, .8);
+         }
+      }
+   }
+
+   &.text_color-border {
+      color: var(--color-border);
+   }
+   &.text_color-text {
+      color: var(--color-text);
+   }
+   &.text_color-main {
+      color: var(--color-main);
+   }
+   &.text_color-green {
+      color: var(--color-green);
+   }
+   &.text_color-red {
+      color: var(--color-red);
+   }
+   &.text_color-red_light {
+      color: var(--color-red_light);
+   }
+
+}

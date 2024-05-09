@@ -1,0 +1,10 @@
+
+.page_body {
+   display: flex;
+	flex-direction: column;
+	gap: var(--layout-gap);
+}
+
+.empty {
+   height: var(--top-btn-height);
+}

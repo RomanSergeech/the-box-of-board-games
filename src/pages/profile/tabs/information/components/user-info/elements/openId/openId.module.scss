@@ -1,0 +1,15 @@
+@import '@/shared/assets/styles/variables.scss';
+
+.open_id {
+	color: var(--color-text);
+	font-size: em(16);
+	font-family: 'ExtraLight';
+	pointer-events: none;
+	user-select: none;
+
+	span {
+		letter-spacing: 0.1em;
+		pointer-events: all;
+		user-select: all;
+	}
+}

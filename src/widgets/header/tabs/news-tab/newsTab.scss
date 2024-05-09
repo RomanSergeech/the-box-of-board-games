@@ -1,0 +1,48 @@
+
+.events_tab {
+   z-index: 2;
+
+	@media (max-width: 1000px) {
+		position: absolute;
+		z-index: 3;
+	}
+
+	.bg {
+		transition: transform .4s cubic-bezier(.58,0,.42,1.01) 0.25s;
+		transform: translate3d(30px, -115px, 0px);
+
+      @media (max-width: 1600px) {
+         transform: translate3d(30px, -125px, 0px);
+      }
+		@media (max-width: 1000px) {
+			transform: translate3d(220px, -560px, 0px);
+
+			&._active_menu {
+				transform: translate3d(220px, -80px, 0px);
+
+            .text {
+               right: 10px;
+               bottom: -170px;
+            }
+			}
+		}
+
+		&::after {
+			width: 300px;
+			height: 300px;
+			transform: rotate(150deg);
+			box-shadow: 0px -2px var(--shadow-part-header-tabs), var(--shadow-inner);
+		}
+
+		.text {
+			bottom: -165px;
+			right: 2px;
+
+			@media (max-width: 1600px) {
+				right: 8px;
+			}
+		}
+
+	}
+	
+}

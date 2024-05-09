@@ -1,0 +1,47 @@
+
+.modal_body {
+   display: grid;
+   align-content: start;
+   gap: 40px;
+}
+
+.title {
+   justify-self: center;
+   color: var(--color-text);
+   font-size: 18px;
+}
+
+.item_description_wrapper {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 20px;
+   padding: 0 20px;
+
+   img {
+      grid-row: 1/4;
+
+      height: 100px;
+      width: auto;
+   }
+
+   p {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      color: var(--color-text);
+
+      span {
+         color: var(--color-main);
+         font-size: 18px;
+      }
+
+      .game:not(:first-of-type) {
+         margin-left: 1em;
+      }
+   }
+}
+
+.item_description {
+   max-width: 400px;
+}

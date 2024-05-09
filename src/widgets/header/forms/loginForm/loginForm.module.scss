@@ -1,0 +1,29 @@
+
+.login_form {
+	position: absolute;
+	bottom: -450px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+   z-index: 1;
+
+   @media (max-width: 1600px) {
+      gap: 10px;
+   }
+	@media (max-width: 1000px) {
+		bottom: -515px;
+	}
+
+	.forgot_password {
+		color: var(--color-text);
+		font-size: 12px;
+		font-family: 'Light';
+		letter-spacing: 0.08em;
+		align-self: flex-end;
+		cursor: pointer;
+		user-select: none;
+	}
+
+}

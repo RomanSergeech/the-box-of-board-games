@@ -1,0 +1,128 @@
+
+.button {
+   position: relative;
+
+   .form_body {
+      display: flex;
+      gap: 10px;
+   }
+
+   .btn {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      user-select: none;
+
+      @media (any-hover: hover) {
+         &:hover {
+            p {
+               color: var(--color-main);
+            }
+         }
+      }
+
+      span {
+         width: 40px;
+         height: 40px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border: 2px solid var(--color-text);
+         border-radius: 10px;
+         pointer-events: none;
+
+         @media (max-width: 1600px) {
+            font-size: 14px;
+            width: 35px;
+            height: 35px;
+         }
+      }
+
+      p {
+         color: var(--color-text);
+         font-size: 16px;
+         font-family: 'Regular';
+         transition: all .3s ease 0s;
+         pointer-events: none;
+
+         @media (max-width: 1600px) {
+            font-size: 14px;
+         }
+      }
+   }
+
+   input {
+      width: 250px;
+      // font-family: 'Regular';
+      // border: 1px solid var(--color-text);
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+      }
+   }
+
+   .search_btn {
+      width: 100%;
+      color: var(--color-gray_dark);
+      font-family: 'Bold';
+      letter-spacing: 0.08em;
+      box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--color-text);
+      border-radius: 5px;
+      padding: 10px 16px;
+      margin: 10px 10px 0 10px;
+
+      transition: all .3s ease 0s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            outline: var(--color-text);
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6), inset 0px 0px 40px rgba(255, 255, 255, 1);
+         }
+      }
+   }
+
+   .close_btn {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-red);
+      box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--color-text);
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      transition: all .3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            outline: var(--color-text);
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.6), inset 0px 0px 10px rgba(255, 255, 255, 1);
+         }
+      }
+      &::before, &::after {
+         content: '';
+         position: absolute;
+         width: 20px;
+         height: 2px;
+         background-color: var(--color-gray_dark);
+      }
+      &::before {
+         transform: rotate(45deg);
+      }
+      &::after {
+         transform: rotate(-45deg);
+      }
+   }
+
+   .tooltip_body {
+      left: 55px;
+      right: auto;
+      transform: translate( 0, -50% );
+   }
+}
